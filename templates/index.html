@@ -7,9 +7,9 @@
 </head>
 <body>
     <h1>画像ファイルをアップロードしてください</h1>
-    <!--画像ファイルをdetector.pyに送るフォームを作成-->
-    <form action="detector.py" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*">
-        <input type="submit" value="送信">
+    <!--画像をアップロードするフォームを作成し、/resultルートをリクエスト-->
+    <form action="/result" method="post" enctype="multipart/form-data">
+        <input type="file" name="img">
+        <input type="submit" value="アップロード">
 </body>
 </html>

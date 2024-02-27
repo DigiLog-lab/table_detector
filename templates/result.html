@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>読み取り結果</title>
+</head>
+<body>
+    <h1>読み取り結果</h1>
+</body>
+<script>
+    //result変数のcsv形式のスクリプトをテーブルとして表示
+    var result = `{{ result }}`;
+    var rows = result.split('\n');
+    var table = '<table>';
+    for (var i = 0; i < rows.length; i++) {
+        table += '<tr>';
+        var cells = rows[i].split(',');
+        for (var j = 0; j < cells.length; j++) {
+            table += '<td>' + cells[j] + '</td>';
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.write(table);
+</script>
+</html>

@@ -1,5 +1,6 @@
 #Flaskのライブラリをインポート
 from flask import Flask, render_template, request, redirect, url_for, flash
+import detector
 
 #Flaskオブジェクトの生成
 app = Flask(__name__)
@@ -8,6 +9,14 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/result')
+def result():
+    if request.method == 'POST':
+        # フォームから送られたデータを取得
+        img = request.form['img']
+        result = detector.table_detection(img)
+        return render_template('result.html', result=result)
 
 
     

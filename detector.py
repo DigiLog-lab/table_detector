@@ -5,6 +5,9 @@ import os
 
 def table_detection(img):
     #環境変数にあるcredintial_fileのパスを取得
-    credential_path = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
+    credential_path = os.environ['credintial_file']
     #認証情報の設定
     client = vision.ImageAnnotatorClient.from_service_account_json(credential_path)
+    #引数の画像を読み込む
+    content = img.read()
+    imgae = types.Image(content=content)
