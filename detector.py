@@ -1,5 +1,5 @@
 from google.cloud import vision
-from google.cloud.vision import types
+from google.cloud.vision import ImageAnnotatorClient
 import pandas as pd
 import os
 

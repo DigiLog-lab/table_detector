@@ -9,7 +9,7 @@
     <h1>画像ファイルをアップロードしてください</h1>
     <!--画像をアップロードするフォームを作成し、/resultルートをリクエスト-->
     <form action="/result" method="post" enctype="multipart/form-data">
-        <input type="file" name="img">
+        <input type="file" name="img" accept=".png, .jpg, .jpeg, .heic" >
         <input type="submit" value="アップロード">
 </body>
 </html>
