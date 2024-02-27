@@ -15,6 +15,7 @@ def result():
     if request.method == 'POST':
         # フォームから送られたデータを取得
         img = request.form['img']
+        # detector.pyのtable_detection関数を呼び出し
         result = detector.table_detection(img)
         return render_template('result.html', result=result)
 
